@@ -1,44 +1,60 @@
 body {
-    background-color: black;
-    height: 3000px;
-    width:  3000px;
-    margin: 0rem;
-    overflow: hidden; 
-  }
-  
-  @keyframes rotate {
-    from {
-      rotate: 0deg;
-    }
-    
-    50% {
-      scale: 1 1.5;
-    }
-    
-    to {
-      rotate: 360deg;
-    }
-  }
-  
-  #cursor {
-    background-color: white;
-    height: 34vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    border-radius: 50%;
+  background: black;
+  margin: 0;
+}
 
-    opacity: 0.8;
-  }
+@font-face {
+  font-family: 'EnglishTowne';
+  src: url('fonts/EnglishTowne.ttf') format('truetype');
   
-  #blur {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    backdrop-filter: blur(12vmax);
-  }
-  
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#glow {
+  background-color: rgb(255, 255, 255);
+  height: 15rem;
+  aspect-ratio: 1;
+  position: fixed;
+  filter: blur(6rem);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out 0s, filter 0.5s;
+}
+
+#glow.hover {
+  background-color: rgb(255, 255, 255);
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 0.5;
+  filter: blur(7rem);
+  height: 20rem;
+  animation: animateHeight 0.3s ease-in-out;
+}
+
+@keyframes animateHeight {
+  from {
+    height: 15rem;
+    filter: blur(6rem);
+  }
+  to {
+    height: 20rem;
+    filter: blur(7rem);
+  }
+}
+
+p {
+  font-family: EnglishTowne;
+  opacity: 1;
+  color: rgb(0, 0, 0);
+  font-size: 10rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10rem;
+}
