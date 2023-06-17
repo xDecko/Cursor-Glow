@@ -6,7 +6,6 @@ body {
 @font-face {
   font-family: 'EnglishTowne';
   src: url('fonts/EnglishTowne.ttf') format('truetype');
-  
 }
 
 .container {
@@ -16,38 +15,75 @@ body {
   height: 100vh;
 }
 
+
+
+
+
+  
+:root {
+  --glow-size: 15rem;
+  --glow-size-hover: 25rem;
+}
+
 #glow {
   background-color: rgb(255, 255, 255);
-  height: 15rem;
+  height: var(--glow-size);
   aspect-ratio: 1;
   position: fixed;
   filter: blur(6rem);
   border-radius: 50%;
-  z-index: -1;
-  opacity: 0.5;
+  opacity: 0.6;
   transform: translate(-50%, -50%);
   transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out 0s, filter 0.5s;
 }
 
+
+
 #glow.hover {
+  height: var(--glow-size-hover);
   background-color: rgb(255, 255, 255);
   transform: translate(-50%, -50%) scale(1.2);
-  opacity: 0.5;
-  filter: blur(7rem);
-  height: 20rem;
-  animation: animateHeight 0.3s ease-in-out;
+  opacity: 0.6;
+  filter: blur(8rem);
+  animation: animateHeight 0.2s ease-in-out;
 }
 
 @keyframes animateHeight {
   from {
-    height: 15rem;
+    height: var(--glow-size);
     filter: blur(6rem);
   }
   to {
-    height: 20rem;
-    filter: blur(7rem);
+    height: var(--glow-size-hover);
+    filter: blur(8rem);
   }
 }
+
+
+
+#glow.reset {
+  transform: translate(-50%, -50%) scale(1);
+  height: var(--glow-size);
+  animation: resetHeight 0.5s ease;
+}
+
+@keyframes resetHeight {
+  from {
+    height: var(--glow-size-hover);
+  }
+  to {
+    height: var(--glow-size);
+  }
+}
+
+
+
+
+
+
+
+
+
 
 p {
   font-family: EnglishTowne;
@@ -56,5 +92,7 @@ p {
   font-size: 10rem;
   text-align: center;
   margin: 0;
+  z-index: 1;
+  padding: 1rem;
   margin-bottom: 10rem;
 }
