@@ -1,10 +1,11 @@
-# GlowCursor
-GlowCursor es una biblioteca JavaScript que te permite crear un impresionante efecto de luz que sigue el cursor en páginas web. El efecto genera un círculo con un efecto de desenfoque (blur), creando la ilusión de una luz que ilumina la pantalla mientras el cursor se mueve.
+# Cursor-Glow
 
-Ejemplo de efecto GlowCursor
+Cursor-Glow is a JavaScript library that allows you to create an impressive light effect that follows the cursor on web pages. The effect generates a circle with a blur effect, creating the illusion of a light illuminating the screen as the cursor moves.
 
-Características
-Fácil de implementar en cualquier página web.
-Personalización del tamaño, color y opacidad del círculo de luz.
-Configuración del desenfoque (blur) para ajustar la intensidad de la iluminación.
-Ligero y rápido, sin afectar significativamente el rendimiento de la página.
+
+Features:
+
+Easy to implement on any web page.
+Customization of the size, color, and opacity of the light circle.
+Configuration of the blur to adjust the intensity of the illumination.
+Lightweight and fast, without significantly affecting the page's performance.
